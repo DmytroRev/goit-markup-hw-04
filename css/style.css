@@ -326,7 +326,9 @@ text-align: center;
     display: flex;
     width: 40px;
     height: 40px;  */
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
+    width: 40px;
+    height: 40px;
 }
 
 .social-list {
@@ -337,7 +339,8 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 8px;
 }
 
 .logo-social {
@@ -369,7 +372,9 @@ margin-bottom: 72px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.container-portfolio-list:hover .overlay-item {
+/* .container-portfolio-list  */
+
+.overlay-item:hover {
     transform: translateY(0%);
 }
 
