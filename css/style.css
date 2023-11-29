@@ -33,6 +33,7 @@ background-color: #FFFFFF;
 
 .header-desing {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);;
 }
 
 .logo {
@@ -63,6 +64,7 @@ display: block;
 padding-top: 24px;
 padding-bottom: 24px;
 position: relative;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-inline {
@@ -78,6 +80,7 @@ position: relative;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    bottom: -1px;
     position: absolute;
     border-radius: 2px;
 }
@@ -92,6 +95,7 @@ position: relative;
     justify-content: space-between;
 }
 
+
 .contacts {
 color: #434455;
 font-style: normal;
@@ -102,6 +106,7 @@ letter-spacing: 0.02em;
 font-style: normal;
 padding-top: 24px;
 padding-bottom: 24px;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-navigation-link {
@@ -113,6 +118,7 @@ padding-bottom: 24px;
     display: flex;
     gap: 40px;
     align-items: center;
+    /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .nav-list {
@@ -131,6 +137,9 @@ padding: 188px 0 188px;
 display: flex;
 background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office.jpg);
 background-size: cover;
+max-width: 1440px;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 .main-button {
@@ -160,6 +169,7 @@ background-color: #4d5ae5;
 border-radius: 4px;
 margin-left: auto;
 margin-right: auto;
+transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -176,21 +186,32 @@ margin-right: auto;
     overflow: hidden;
   }
 
-.logo-icon {
+ .logo-icon {
     line-height: 0; 
 }
 
-.benefits-icon {
+ .benefits-icon {
     display: flex;
     gap: 24px;
 }
 
-.icon-item {
-    border: 1px solid #8E8F99;
+ /* .icon-item {
+     border: 1px solid #8E8F99; 
     padding: 24px 100px;
-    background-color: #F4F4FD;
+    background-color: #F4F4FD; 
     border-radius: 4px;
     width: calc((100% - 72px) / 4);
+}   */
+
+.icon-list {
+    display: flex;
+     align-items: center; 
+     justify-content: center; 
+    height: 112px;
+    background-color: #F4F4FD;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px #8E8F99 solid;
 }
 
 
@@ -259,6 +280,7 @@ font-weight: 400;
 /* padding-bottom: 32px; */
 border-radius: 0px 0px 4px 4px;
 width: calc((100% - 3 * 24px) / 4);
+box-shadow:  0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .name-list {
@@ -288,18 +310,35 @@ text-align: center;
     display: flex;
     gap: 24px;
     justify-content: center;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
 }
 
 .social-link-item {
-    border: 1px solid #4D5AE5;
+    /* border: 1px solid #4D5AE5;
     border-radius: 50%;
     background-color: #4D5AE5;
     padding: 12px;
     stroke: #F4F4FD;
     display: flex;
+    width: 40px;
+    height: 40px;  */
+    padding-bottom: 32px;
 }
 
+.social-list {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.logo-social {
+    fill: #f4f4fd;
+}
 
 .portfolio {
 color: #2e2f42;
@@ -323,11 +362,11 @@ margin-bottom: 72px;
 .container-portfolio-list {
     width: calc((100% - 48px) / 3);
     overflow: hidden;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.container-portfolio-list-item {
-    /* margin-top: 24px; */
-
+.container-portfolio-list:hover .overlay-item {
+    transform: translateY(0%);
 }
 
 .container-text {
@@ -348,12 +387,31 @@ margin-bottom: 8px;
 }
 
 .portfolio-list-item {
-color: #434455;
+/* color: #434455;
 font-size: 16px;
 font-weight: 400;
 line-height: 1.5;
-letter-spacing: 0.02em;
+letter-spacing: 0.02em; */
 /* padding-bottom: 32px; */
+}
+
+.overlay-item {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container-portfolio-list:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);;
 }
 
 .container-portfolio-list:hover .overlay {
@@ -372,7 +430,7 @@ transform: translateY(0%);
     background-color: #4D5AE5;
     width: 100%;
     height: 100%;
-    padding: 40px 32px;
+    /* padding: 40px 32px;  */
     overflow: auto;
     transform: translateY(100%);
     transition: transform 250ms linear;
@@ -386,6 +444,16 @@ font-size: 16px;
 font-weight: 400;
 line-height: 1.5;
 letter-spacing: 0.02em;
+}
+
+.footer-desing {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-desing-item {
+    margin-right: 120px;
+
 }
 
 .footer {
@@ -402,7 +470,7 @@ line-height: 1.17;
 letter-spacing: 0.03em;
 text-transform: uppercase;
 display: inline-block;
-/* margin-bottom: 16px; */
+/* margin-bottom: 16px;  */
 }
 
 .logotype-footer {
@@ -426,34 +494,50 @@ margin-right: 0;
 }
 
 .footer-link {
-    color: white;
-font-size: 16px;
-font-weight: 500;
-line-height: 1.5;
-letter-spacing: 0.02em;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-bottom: 16px;
 }
 
 /* l+g */
 .footer-list {
     display: flex;
-    line-height: 0; 
     gap: 16px;
 }
 
 .footer-link-item {
-    padding-left: 540px;
 }
 
 .footer-icon {
-    border: 1px solid #4D5AE5;
-    border-radius: 50%;
-    background-color: #4D5AE5;
-    padding: 16px;
-    stroke: #F4F4FD;
-    display: flex;
-    margin-top: 16px;
+    width: 40px;
+    height: 40px;
 }
 
+.footer-desing-list {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-desing-list:hover {
+    background-color: #31d0aa;
+}
+
+.footer-desing-list:focus {
+    background-color: #31d0aa;
+}
+
+.logo-footer-desing {
+    fill: #f4f4fd;
+}
 
 .nav-link:hover,
 .nav-link:focus
@@ -478,3 +562,5 @@ background-color: #404BBF;
 .nav-link-list:focus {
     color: #404BBF;
 }
+
+/* flex footer */
